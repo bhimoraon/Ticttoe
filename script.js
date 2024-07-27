@@ -22,14 +22,18 @@ const checkWinner = () => {
     let z = box[item[2]].innerHTML;
     console.log("checking");
     if (x == y && y == z && x != "") {
+      result.innerHTML = `Congratulations,Player ${z} is the Winner`;
       result.style.visibility = "visible";
+      reset.innerHTML = "Play Again";
     }
   });
 };
+let count = 1;
 
 box.forEach((e) => {
   e.addEventListener("click", () => {
     if (e.innerHTML == "") {
+      count++;
       if (turnO) {
         e.innerHTML = "O";
         turnO = false;
@@ -39,12 +43,14 @@ box.forEach((e) => {
         turnO = true;
         heading.innerHTML = "Player O's turn";
       }
+      checkWinner();
+      if (count == 9) reset.innerHTML = "Play Again";
     }
-    checkWinner();
   });
 });
-
 reset.addEventListener("click", () => {
+  result.style.visibility = "hidden";
+  reset.innerHTML = "Reset";
   box.forEach((e) => {
     e.innerHTML = "";
   });
