@@ -20,7 +20,6 @@ const checkWinner = () => {
     let x = box[item[0]].innerHTML;
     let y = box[item[1]].innerHTML;
     let z = box[item[2]].innerHTML;
-    console.log("checking");
     if (x == y && y == z && x != "") {
       result.innerHTML = `Congratulations,Player ${z} is the Winner`;
       result.style.visibility = "visible";
@@ -28,7 +27,7 @@ const checkWinner = () => {
     }
   });
 };
-let count = 1;
+let count = 0;
 
 box.forEach((e) => {
   e.addEventListener("click", () => {
@@ -50,6 +49,7 @@ box.forEach((e) => {
 });
 reset.addEventListener("click", () => {
   result.style.visibility = "hidden";
+  count = 0;
   reset.innerHTML = "Reset";
   box.forEach((e) => {
     e.innerHTML = "";
