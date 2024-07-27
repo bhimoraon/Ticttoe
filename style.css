@@ -27,11 +27,12 @@ body {
   background: white;
   margin: 30px;
 }
-h1 {
+.btn {
   background: blue;
   width: 15rem;
   height: 3rem;
   color: white;
+  font-size: 2rem;
 
   text-align: center;
   padding-top: 7px;
@@ -43,11 +44,12 @@ h1 {
   border: 2px solid white;
   width: 10rem;
   color: white;
-  background-color: red;
+  background-color: rgb(80, 183, 194);
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 100px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 550px) {
@@ -61,6 +63,11 @@ h1 {
   .box {
     width: 5rem;
     height: 5rem;
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding-top: 20px;
+    font-size: 1.4rem;
   }
 }
