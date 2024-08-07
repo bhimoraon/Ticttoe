@@ -42,6 +42,7 @@ box.forEach((e) => {
         turnO = true;
         heading.innerHTML = "Player O's turn";
       }
+      if(count>4)
       checkWinner();
       if (count == 9) reset.innerHTML = "Play Again";
     }
